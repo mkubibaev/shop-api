@@ -1,1 +1,18 @@
-[{"title":"new product","price":100,"description":"some description","id":"1"},{"title":"new product","price":100,"description":"some description","id":"2"}]
+{
+  "products": [
+    {
+      "title": "New product",
+      "price": "123",
+      "description": "fdafd",
+      "id": "9G4YZ2s7kM_wh3KoLEtQv",
+      "categoryId": "B6c1ZQA-bqUx4NaWAUi3Z",
+      "image": "MJKwnLiXe1WIKhVx43JaU.jpg"
+    }
+  ],
+  "categories": [
+    {
+      "title": "Watches",
+      "id": "B6c1ZQA-bqUx4NaWAUi3Z"
+    }
+  ]
+}

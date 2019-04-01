@@ -1,5 +1,7 @@
 node_modules
 .idea
 .vscode
+db.json
 
+.DS_Store
 
