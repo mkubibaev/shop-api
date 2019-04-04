@@ -2,8 +2,8 @@ const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const nanoid = require('nanoid');
-const config = require('../config');
 
+const config = require('../config');
 const Product = require('../models/Product');
 
 const storage = multer.diskStorage({
@@ -21,7 +21,7 @@ const upload = multer({storage});
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    Product.find()
+    Product.find().populate('category')
         .then(products => res.send(products))
         .catch(() => res.sendStatus(500));
 });
