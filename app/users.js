@@ -7,8 +7,10 @@ const router = express.Router();
 router.post('/', (req, res) => {
     const user = new User(req.body);
 
+    user.generateToken();
+
     user.save()
-        .then(user => res.send(user))
+        .then(user => res.send({message: 'User registered', user}))
         .catch(error => res.status(400).send(error))
 });
 
@@ -25,7 +27,9 @@ router.post('/sessions', async (req, res) => {
         return res.status(400).send({error: 'Password is wrong'});
     }
 
-    return res.send({message: 'Username and password correct!'});
+    user.generateToken();
+    
+    return res.send({message: 'Login successfull', user});
 
 });
 
