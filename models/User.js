@@ -12,7 +12,9 @@ const UserSchema = new Schema({
         required: true,
         unique: true,
         validate: {
-            validator: async value => {
+            validator: async function(value) {
+                if (!this.isModified('username')) return;
+                
                 const user = await User.findOne({username: value});
                 if (user) throw new Error();
             },
